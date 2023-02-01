@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+        </style>
+        
+</head>
+<body>
+    <header>
+        <h1>Calculadora</h1>    
+    </header>
+    <main>
+        <div id="area"></div>
+        <form action="" class="calc">
+            <fieldset class="campNums">
+                <div class="area2">    
+                    <div class="area3">
+                        <input type="number" name="num1" id="num1" class="nums">
+                        <select name="" id="op">
+                            <option value="0" selected></option>
+                            <option value="1">+</option>
+                            <option value="2">-</option>
+                            <option value="3">x</option>
+                            <option value="4">/</option>
+                            <option value="5">%</option>
+                        </select>
+                    <input type="number" name="num2" id="num2" class="nums">
+                    <input type="button" value="=" onclick="res()" class="">
+                </div>
+                    <div id="areaRes"></div>
+                </div>
+                    
+            </fieldset>
+        </form>
+
+
+    </main>
+
+    <script>
+        function res(){
+            var n1=Number(document.querySelector("input#num1").value)
+            var n2=Number(document.querySelector("input#num2").value)
+            var op=document.querySelector("select#op").value
+            var area=document.querySelector("div#areaRes")
+        
+            if(op==0){
+                window.alert("[ERRO] Selecione uma operação!")
+            }else if(op==1){
+                area.innerHTML=n1+n2
+                console.log(n1+n2)
+            }else if(op==2){
+                area.innerHTML=n1-n2
+                console.log(n1-n2)
+            }else if(op==3){
+                area.innerHTML=n1*n2
+                console.log(n1*n2)
+            }else if(op==4){
+                area.innerHTML=n1/n2
+                console.log(n1/n2)
+            }else if(op==5){
+                area.innerHTML=(n1*n2)/100
+
+            }
+        }
+    </script>
+</body>
+</html>
